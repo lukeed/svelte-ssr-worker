@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "name": "svelte-ssr-worker",
+  "scripts": {
+    "build": "run-s build:**",
+    "build:client": "node bin client",
+    "build:server": "node bin server",
+    "build:worker": "node bin worker",
+    "start": "sirv public --single --dev",
+    "watch:client": "node bin client --watch",
+    "watch": "run-p start watch:client"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "dependencies": {
+    "sirv-cli": "^0.4.4"
+  },
+  "devDependencies": {
+    "mri": "^1.1.4",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.12.0",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "svelte": "^3.0.0"
+  }
+}
