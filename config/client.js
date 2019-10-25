@@ -6,9 +6,6 @@ const { terser } = require('rollup-plugin-terser');
 
 const production = !process.env.ROLLUP_WATCH;
 
-// Use "/" for local development
-const MY_CDN = production ? 'https://cdn.example.com' : '';
-
 module.exports = {
 	input: 'src/client.js',
 	output: {

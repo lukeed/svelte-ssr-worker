@@ -1,6 +1,7 @@
 import HTML from './index.html'; // via `rollup-plugin-string`
 import App from './_server'; // auto-generated
 
+// TODO: Update this
 const MY_CDN = 'https://cdn.example.com';
 
 addEventListener('fetch', event => {

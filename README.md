@@ -50,7 +50,7 @@ It's auto-generated and meant to be consumed by the `build:worker` script and `s
 Builds your Cloudflare Worker code.<br>
 This consumes the generated `src/_server.js` file and saves a copy of your HTML template (`src/index.html`).
 
-The final worker file is saved to `build/index.js`, which can be deployed to your Cloudflare Worker directly.
+The final worker file is saved to `build/worker.js`, which can be deployed to your Cloudflare Worker directly.
 
 > **Note:** Deployment is not included in this template.
 
@@ -71,6 +71,24 @@ On any change, rebuilds the front-end application.
 ### `watch`
 
 This is an alias for running the `start` and `watch:client` scripts simultaneously.
+
+
+## Deploy
+
+You should have a storage bucket setup and attached to a CDN ahead of time.<br>
+Once the CDN address is known, you will need to replace the `https://cdn.example.com` value from:
+
+* `src/worker.js`
+* `bin/index.js`
+
+> **Note:** Presumably, this should never need to be changed again.
+
+Then, after a successful `build`, you will need to:
+
+* Upload `public/*` to that storage bucket
+* Upload `build/worker.js` to Cloudflare Workers
+
+You're done~! :tada:
 
 
 ## License

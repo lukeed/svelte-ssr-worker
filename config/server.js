@@ -14,7 +14,7 @@ module.exports = {
 	},
 	plugins: [
 		svelte({
-			dev: false,
+			dev: !production,
 			generate: 'ssr',
 			css: false
 		}),

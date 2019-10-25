@@ -10,7 +10,7 @@ const write = promisify(fs.writeFile);
 
 const argv = mri(process.argv.slice(2));
 
-const MY_CDN = 'https://cdn.example.com';
+const MY_CDN = 'https://cdn.example.com'; // TODO: Update this
 const TEMPLATE = join(__dirname, '..', 'src', 'index.html');
 
 // What to build: client | server | worker
@@ -69,8 +69,10 @@ async function bundle() {
 					break;
 
 				case 'BUNDLE_END':
-					ran || await template();
-					ran = true;
+					if (entry === 'client') {
+						ran || await template();
+						ran = true;
+					}
 					break;
 
 				default:
