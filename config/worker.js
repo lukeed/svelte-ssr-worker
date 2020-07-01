@@ -1,5 +1,5 @@
-const commonjs = require('rollup-plugin-commonjs');
-const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
+const { default: resolve } = require('@rollup/plugin-node-resolve');
 const { string } = require('rollup-plugin-string');
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
 	},
 	treeshake: {
 		propertyReadSideEffects: false,
-		pureExternalModules: true
+		moduleSideEffects: 'no-external'
 	},
 	external: [
 		...require('module').builtinModules

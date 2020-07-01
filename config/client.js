@@ -1,6 +1,6 @@
 const svelte = require('rollup-plugin-svelte');
-const commonjs = require('rollup-plugin-commonjs');
-const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
+const { default: resolve } = require('@rollup/plugin-node-resolve');
 const livereload = require('rollup-plugin-livereload');
 const { terser } = require('rollup-plugin-terser');
 
