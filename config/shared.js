@@ -6,6 +6,7 @@ import replace from '@rollup/plugin-replace';
 export const isDev = !!process.env.ROLLUP_WATCH;
 export const Svelte = require('../svelte.config');
 
+// TODO: Update CDN value :)
 export const Replaces = {
 	'{{CDN}}': isDev ? '' : 'https://cdn.example.com',
 	'process.env.NODE_ENV': isDev ? 'development' : 'production',
