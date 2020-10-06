@@ -4,10 +4,10 @@ import { Plugins } from './shared';
 
 /** @type import('rollup').RollupOptions */
 export default {
-	input: 'src/worker.js',
+	input: 'src/index.ssr.js',
 	output: {
 		format: 'esm',
-		file: 'build/worker.js',
+		file: 'build/index.js',
 		sourcemap: false,
 	},
 	treeshake: {

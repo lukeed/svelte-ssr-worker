@@ -38,7 +38,7 @@ function HTML(options={}) {
 
 /** @type import('rollup').RollupOptions */
 export default {
-	input: 'src/client.js',
+	input: 'src/index.dom.js',
 	output: {
 		name: 'app',
 		format: 'iife',
