@@ -1,8 +1,6 @@
-import HTML from './index.html'; // via `rollup-plugin-string`
+// @ts-ignore - built via DOM config
+import HTML from '../public/index.html';
 import App from './App.svelte';
-
-// TODO: Update this
-const MY_CDN = 'https://cdn.example.com';
 
 addEventListener('fetch', event => {
 	const req = event.request;
@@ -19,11 +17,9 @@ addEventListener('fetch', event => {
 	}
 
 	const output = (
-		// Always use the CDN bucket
-		HTML.replace(/_CDN_BUCKET_/g, MY_CDN)
-			// inject SSR'd header & body contents
-			.replace(/_INJECT_HEAD_/g, inject_head)
-			.replace(/_INJECT_BODY_/g, ssr.html)
+		HTML // Inject SSR'd header & body contents
+			.replace('<!-- {{INJECT.HEAD}} -->', inject_head)
+			.replace('<!-- {{INJECT.BODY}} -->', ssr.html)
 	);
 
 	event.respondWith(

@@ -2,6 +2,19 @@
 	export let name;
 </script>
 
+<h1>Hello {name}!</h1>
+
+<figure class="notice">
+	<p><strong>THIS IS A DEMO</strong></p>
+	<p>Navigate to any pathname; eg `/lukeed` for updated SSR response.</p>
+	<p>On the server-side app, the greeting will always update.</p>
+	<p>On the client-side app, it will always read "Hello world!"</p>
+
+	<hr>
+
+	<p>PS – There is no CDN set up, so 404s are expected.</p>
+</figure>
+
 <style>
 	h1 {
 		color: purple;
@@ -17,16 +30,3 @@
 		border-color: green;
 	}
 </style>
-
-<h1>Hello {name}!</h1>
-
-<figure class="notice">
-	<p><strong>THIS IS A DEMO</strong></p>
-	<p>Navigate to any pathname; eg `/lukeed` for updated SSR response.</p>
-	<p>On the server-side app, the greeting will always update.</p>
-	<p>On the client-side app, it will always read "Hello world!"</p>
-
-	<hr>
-
-	<p>PS – There is no CDN set up, so 404s are expected.</p>
-</figure>

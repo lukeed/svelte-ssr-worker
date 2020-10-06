@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "name": "svelte-ssr-worker",
   "scripts": {
-    "build": "rollup -c",
+    "build": "run-s build:**",
+    "build:dom": "rollup -c config/dom.js",
+    "build:ssr": "rollup -c config/ssr.js",
     "start": "sirv public --single --dev",
-    "watch": "run-p \"start --quiet\" \"build -w\""
+    "watch": "run-p \"start --quiet\" watch:dom",
+    "watch:dom": "run-s \"build:dom -w\"",
+    "watch:ssr": "rollup -cw config/ssr.js"
   },
   "engines": {
-    "node": ">= 8"
+    "node": ">=10"
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
@@ -16,6 +20,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "15.1.0",
     "@rollup/plugin-node-resolve": "9.0.0",
+    "@rollup/plugin-replace": "2.3.3",
     "mri": "1.1.6",
     "npm-run-all": "4.1.5",
     "rollup": "2.28.2",

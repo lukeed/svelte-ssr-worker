@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-
 	<title>Svelte app</title>
+	<meta name="theme-color" content="#1e88e5">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<link rel="icon" type="image/png" href="_CDN_BUCKET_/favicon.png">
-	<link rel="stylesheet" href="_CDN_BUCKET_/global.css">
-	<link rel="stylesheet" href="_CDN_BUCKET_/bundle.css">
-
-	<script defer src="_CDN_BUCKET_/bundle.js"></script>
-	_INJECT_HEAD_
+	<link rel="icon" type="image/png" href="{{CDN}}/favicon.png">
+	<link rel="stylesheet" href="{{CDN}}/global.css">
+	<link rel="stylesheet" href="{{CDN}}/bundle.css">
+	<script defer src="{{CDN}}/bundle.js"></script>
+	<!-- {{INJECT.HEAD}} -->
 </head>
 <body>
-	_INJECT_BODY_
+	<!-- {{INJECT.BODY}} -->
 </body>
 </html>
