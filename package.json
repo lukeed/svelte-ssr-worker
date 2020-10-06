@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "sirv public --single --dev",
-    "watch": "run-p start \"build -w\""
+    "watch": "run-p \"start --quiet\" \"build -w\""
   },
   "engines": {
     "node": ">= 8"
