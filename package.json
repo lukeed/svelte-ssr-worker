@@ -3,13 +3,9 @@
   "version": "0.0.0",
   "name": "svelte-ssr-worker",
   "scripts": {
-    "build": "run-s build:**",
-    "build:client": "node bin client",
-    "build:server": "node bin server",
-    "build:worker": "node bin worker",
+    "build": "rollup -c",
     "start": "sirv public --single --dev",
-    "watch:client": "node bin client --watch",
-    "watch": "run-p start watch:client"
+    "watch": "run-p start \"build -w\""
   },
   "engines": {
     "node": ">= 8"
